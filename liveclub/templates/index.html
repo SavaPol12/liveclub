@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Главная</h1>
+    <p>Недавние записи:</p>
+    {% if notes %}
+        {% for el in notes %}
+            <div class="alert alert-warning mt-2">
+                <h6>{{ el.person_do_it }}</h6>
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.note }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Нет новых записей(</p>
+    {% endif %}
+{% endblock %}
+
+
